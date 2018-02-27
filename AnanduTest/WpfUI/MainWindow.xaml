@@ -1,0 +1,109 @@
+﻿<Window x:Class="WpfUI.MainWindow" Name="MainWindowForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="650" Style="{DynamicResource MetroWindowStyle}" >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="AppTheme/Style.xaml"></ResourceDictionary>
+                <!--window styler-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Window.Resources>
+
+    <Grid Name="GD_MainContainer" Background="Transparent" Margin="1" >
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Grid x:Name="GD_Default" RenderTransformOrigin="0.0,0.0" OpacityMask="#FF2ABEC8" Grid.Column="2" Visibility="Hidden" >
+
+
+            <Label>some content</Label>
+
+        </Grid>
+
+
+        <!--  Home Screeen -->
+        <Grid x:Name="GD_HomeScreen" Background="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="2"   >
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="TranHome"/>
+            </Grid.RenderTransform>
+
+            <TabControl x:Name="Tc_HomeOptions" Style="{StaticResource TabControlStyle}" SelectedIndex="1" >
+
+                
+
+                <!-- TabItem All  -->
+                <TabItem Style="{StaticResource TabItemStyle}" Header="All"  Tag="0" >
+
+                    <Grid x:Name="Gd_Home_AllQuestions" Margin="5"   >
+                       
+
+                        <ScrollViewer Template="{DynamicResource ScrollViewerControlTemplate}" >
+                            <Button x:Name="btn1" Content="Clcickme" Click="btn1_Click" Width="100" Height="100"></Button>
+                        </ScrollViewer>
+                    </Grid>
+
+
+                </TabItem>
+
+
+                <!-- TabItem Answerd  -->
+                <TabItem Style="{StaticResource TabItemStyle}" Header="Answerd" Tag="1">
+                    <Grid x:Name="Gd_Home_AnswerdQuestions" Margin="5"  >
+                       
+                        <ScrollViewer Template="{DynamicResource ScrollViewerControlTemplate}" >
+                        </ScrollViewer>
+                    </Grid>
+
+                </TabItem  >
+
+
+                <!-- TabItem NonAnswerd  -->
+                <TabItem Style="{StaticResource TabItemStyle}" Header="UnAnswerd" Tag="2">
+
+                    <!-- Group lIst -->
+                    <Grid x:Name="Gd_Home_NonAnswerdQuestions" Margin="5"   >
+                      
+
+                        <ScrollViewer Template="{DynamicResource ScrollViewerControlTemplate}" >
+
+                        </ScrollViewer>
+                    </Grid>
+
+
+                </TabItem>
+
+            </TabControl>
+
+            <Grid Name="Gd_Home_Left" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="5,0,0,5">
+
+
+
+                <Button x:Name="btnAddCntact">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Rectangle  RadiusX="70" RadiusY="70" Fill="Black"   />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
