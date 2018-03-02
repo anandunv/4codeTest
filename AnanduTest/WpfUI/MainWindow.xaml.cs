@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Queries.Presistence;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,10 +26,11 @@ namespace WpfUI
             InitializeComponent();
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+      
+
+        private void MainWindowForm_Loaded(object sender, RoutedEventArgs e)
         {
-            GD_Default.Visibility = Visibility.Visible;
-            GD_HomeScreen.SetValue(Grid.ColumnSpanProperty, 1);
+           
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Queries.Core.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Queries.Core
 {
     public interface IUnitOfWork : IDisposable
     {
+        IQuestionRepository Questions { get;}
         int Complete();
     }
 }
